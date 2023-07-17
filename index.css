@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700;1,800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+}
+:root{
+    --black: #333;
+    --white: #fff;
+}
+.dark{
+    --black: #fff;
+    --white: #333;
+}
+
+header{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 10000;
+}
+header .Logo{
+    position: relative;
+    display: inline-flex;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+}
+.rightside{
+    display: flex;
+}
+.btns{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    /* background: #CCC; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.btns ion-icon{
+    font-size: 1.5em;
+    color: var(--black);
+}
+.btns.menutoggle ion-icon{
+    font-size: 2em;
+}
+.btns ion-icon:nth-child(2){
+    display: none;
+}
+.btns.active ion-icon:nth-child(2)
+{
+    display: block;
+    /* background-color: aqua; */
+}
+.btns.active ion-icon:nth-child(1)
+{
+    display: none;
+    /* background-color: aqua; */
+}
+.main{
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.main , video{
+    position:absolute;
+    top: 0;
+    left: 50;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mask{
+    position:absolute;
+    top: 0;
+    left: 50;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    user-select: none;
+    mix-blend-mode: screen;
+}
+.dark .mask{
+    filter: invert(1);
+    mix-blend-mode: multiply;
+}
+.main h2{
+    position: absolute;
+    z-index: 3;
+    font-size: 7vw;
+    color: #fff;
+    text-shadow: black;
+    user-select: none;
+    text-transform: uppercase;
+}
+.navi{
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+    z-index: 10;
+    transition: 0.5s;
+}
+.navi.active{
+    left: 0;
+}
+.navi li{
+    list-style-type: none;
+}
+.navi li a{
+    text-decoration: none;
+    display: inline-flex;
+    margin: 5px 0;
+    font-size: 1.35em;
+    color: var(--black);
+    padding: 5px 20px;
+    border-radius: 40px;
+}
+.navi li a:hover{
+    background: var(--black);
+    color:var(--white);
+
+}
+.copyright{
+    position: absolute;
+    left: 100px;
+    bottom: 2px;
+    z-index: 4;
+    font-weight: 500;
+    font-size: 1em;
+    color: var(--black);
+}
+.sci{
+    position: absolute;
+    right: 100px;
+    bottom: 10px;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.sci li{
+    list-style: none;
+}
+.sci a{
+    text-decoration: none;
+    font-size: 1.75em;
+    color: var(--black);
+}
+
+/* ************************************************************************************************************************* */
+/* +++++++++++++++++++++++++++++++++++++++++++ TOTALLY RESTRICTED +++++++++++++++++++++++++++++++++++++++++++++++++++++++++  */
+@media (max-width:768px){
+    header{
+        padding: 10px;
+    }
+    .main, video {
+        object-fit: initial;
+    }
+    .main h2 {
+        font-size: 12vw;
+        text-align: center;
+        text-shadow: 0 0 black;
+    }
+    .copyright{
+        left: 20px;
+        bottom: 20px;
+    }
+    .sci{
+        bottom:0px;
+        right:20px;
+        font-size: 0.8em;
+    }
+}
+@media (max-width:390px){
+
+
+    header{
+        padding: 10px;
+    }
+    header .Logo {
+        font-size: 1.15em;
+    }
+    .btns{
+        margin-left: 2px;
+    }
+    .btns.menutoggle ion-icon {
+        font-size: 1.5em;
+    }
+    .btns ion-icon {
+        font-size: 1.35em;
+    }
+    .main, video {
+        object-fit: initial;
+    }
+    .main h2 {
+        font-size: 12vw;
+        text-align: center;
+        text-shadow: 0 0 black;
+    }
+}

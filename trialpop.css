@@ -1,0 +1,98 @@
+
+.popup{
+    z-index: 2000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+.conbox{
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.conbox .imgbx{
+    position: relative;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.conbox .imgbx::before{
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #e7ffe0;
+    border-radius: 50%;
+}
+.conbox .imgbx img{
+    position: relative;
+    max-width: 200px;
+    z-index: 1;
+}
+.conbox .offercontent{
+    position: relative;
+    top: -20px;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.conbox .offercontent h3{
+    position: relative;
+    top: 40px;
+    color: #333;
+    line-height: 1em;
+    font-weight: 300;
+    font-size: 1.5em;
+}
+.conbox .offercontent h2{
+    position: relative;
+    top: 40px;
+    font-size: 3em;
+    color: #ff4d54;
+    line-height: 1em;
+}
+.conbox .offercontent h2 span{
+    color: #333;
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+.conbox .offercontent p{
+    position: relative;
+    top: 35px;
+    font-weight: 300;
+}
+.conbox .offercontent h4{
+    position: relative;
+    top: 25px;
+    display: inline-block;
+    padding: 10px 10px;
+    background: #ff4d54 ;
+    color: #fff;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #f3f3f3 url(/Project/resources/close.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
